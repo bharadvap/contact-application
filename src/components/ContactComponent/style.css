@@ -1,0 +1,74 @@
+.contact-application {
+  display: block;
+  overflow: scroll;
+}
+body.contact-application {
+  overflow: hidden;
+}
+body.modal-open {
+  overflow: hidden;
+}
+.modal.show {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.contact-application .modal-dialog::after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  opacity: 0.9;
+  content: "";
+  z-index: 1;
+  overflow: auto;
+  display: block;
+  height: 100%;
+  width: calc(100% - 5px);
+}
+/* .modal-backdrop.show{background:#fff;opacity: 0.9;} */
+.contact-application .modal-dialog {
+  max-width: 1100px;
+  z-index: 1000;
+}
+.modal-dialog-centered {
+  min-height: calc(100% - 140px);
+  margin: 30px auto 110px;
+}
+.modal-dialog-centered::before {
+  height: calc(100vh - 9.5rem);
+}
+.contact-application .modal-content {
+  box-shadow: 0 6px 30px 10px rgba(33, 30, 60, 0.08);
+  border: 0;
+  border-radius: 0;
+  z-index: 1000;
+}
+.contact-application .modal-content .modal-body {
+  padding: 41px;
+}
+
+/* MODAL HEADER */
+.modal-header {
+  padding: 0;
+  border: 0;
+}
+.modal-header .back-btn {
+  position: absolute;
+  left: -100px;
+  display: none;
+}
+.modal-header .close-btn {
+  position: absolute;
+  right: -20px;
+  height: 20px;
+  padding: 0;
+  top: 15px;
+  opacity: 1;
+}
+.modal-header .close-btn img {
+  width: 20px;
+  height: 20px;
+}
+/* END */
