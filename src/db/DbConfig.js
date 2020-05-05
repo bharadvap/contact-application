@@ -1,3 +1,4 @@
+// In this file we are configure our data base and add tables and configure it.
 export const DBConfig = {
   name: "ContactApllication",
   version: 1,

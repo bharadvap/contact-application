@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 const SignUpComponent = (props) => {
+  // We are managing the state for functional component
   const [user, setUser] = useState({});
   const [error, setErrors] = useState({});
+
+  // This is handle all the on change.
   const handleOnChange = (event) => {
     event.persist();
     setUser((user) => ({
@@ -10,7 +13,8 @@ const SignUpComponent = (props) => {
     }));
   };
 
-  const handOnSubmit = (event) => {
+  // This is handle all the on Submit.
+  const handleOnSubmit = (event) => {
     event.preventDefault();
     props.onSignUpCall(user);
   };
@@ -57,7 +61,7 @@ const SignUpComponent = (props) => {
 
       <button
         className="btn btn-primary btn-block"
-        onClick={(e) => handOnSubmit(e)}
+        onClick={(e) => handleOnSubmit(e)}
       >
         Sign Up
       </button>

@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useIndexedDB } from "react-indexed-db";
 import history from "../../history";
 const SignInComponent = (props) => {
+  // This hook will use to get data based on key value.
   const { getByIndex } = useIndexedDB("user");
   const [user, setUser] = useState({});
+
+  // This method will handle in on changes
   const handleOnChange = (event) => {
     event.persist();
     setUser((user) => ({
@@ -12,6 +15,7 @@ const SignInComponent = (props) => {
     }));
   };
 
+  // This method will handle submit
   const handOnSubmit = (event) => {
     event.preventDefault();
     if (Object.keys(user).length > 0) {

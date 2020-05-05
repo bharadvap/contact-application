@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./style.css";
 const CreateEditFormForContact = (props) => {
   const [contact, setContact] = useState({});
+
+  // This method will use full for handle on change of every input
   const handleOnChange = (event) => {
     event.persist();
     setContact((contact) => ({
@@ -10,10 +12,12 @@ const CreateEditFormForContact = (props) => {
     }));
   };
 
+  // This useEffect is use for set contact detail when use is in edit mode
   useEffect(() => {
     setContact(props.contact);
   }, [props.contact]);
 
+  // Handle submit and create or edit the contact
   const handleSubmit = (event) => {
     event.preventDefault();
     props.onCreateOrEdit(contact);

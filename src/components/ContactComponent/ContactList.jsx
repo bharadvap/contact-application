@@ -1,5 +1,6 @@
 import React from "react";
 const ContactList = (props) => {
+  // This method is return the contact details
   const returnItemList = (item) => {
     return (
       <tr>
