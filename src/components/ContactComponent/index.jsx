@@ -82,7 +82,7 @@ const ContactComponent = (props) => {
         <ContactList contactList={contactList} onEdit={onEdit} />
       ) : (
         <div>
-          <h1>There is no contact found"</h1>
+          <h1>There is no contact found</h1>
         </div>
       )}
       {isOpen && (

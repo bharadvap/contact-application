@@ -74,6 +74,9 @@ const SignInComponent = (props) => {
       >
         Submit
       </button>
+      <p className="forgot-password text-right">
+        New user Registration <a href="/signUp">sign Up?</a>
+      </p>
     </>
   );
 };

@@ -1,8 +1,24 @@
 import React, { useState, useEffect } from "react";
+import { useIndexedDB } from "react-indexed-db";
+import history from "../../history";
 const SignUpComponent = (props) => {
   // We are managing the state for functional component
   const [user, setUser] = useState({});
-  const [error, setErrors] = useState({});
+
+  // This hook provide you to add user in database.
+  const { add } = useIndexedDB("user");
+
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    add(user).then(
+      (event) => {
+        history.push("/signIn");
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
 
   // This is handle all the on change.
   const handleOnChange = (event) => {
@@ -11,12 +27,6 @@ const SignUpComponent = (props) => {
       ...user,
       [event.target.name]: event.target.value,
     }));
-  };
-
-  // This is handle all the on Submit.
-  const handleOnSubmit = (event) => {
-    event.preventDefault();
-    props.onSignUpCall(user);
   };
 
   return (
